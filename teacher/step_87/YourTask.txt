@@ -1,0 +1,16 @@
+Ваша задача: создать доменную модель приложения (классы Classifier
+и ClassifierValue) и указать их маппинг на соответствующий
+таблицы в реляционной базе данных.
+
+Классы Classifier и ClassifierValue создать в пакете core.domain.
+
+
+Как дополнительный материал по теме можно послушать одну из лекций:
+Viktor: https://www.youtube.com/watch?v=CM1ovXWBAGk
+Ruslan: https://www.youtube.com/watch?v=Ol3MxDW3rwg
+
+https://spring.io/guides/gs/accessing-data-mysql/
+
+PS: не забудьте по окончанию выполнения шага создать и заполнить
+файл /documentation/Step_X_description.txt. Формат заполнения этого
+файла описан в step_1 в файле Learning_reflection.txt.
