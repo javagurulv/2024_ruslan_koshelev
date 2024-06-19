@@ -1,0 +1,12 @@
+Ментор скопировал в /version_2 и внёс изменения в
+интерфейс TravelCalculatePremiumService
+и класс TravelCalculatePremiumServiceImpl.
+
+Ваша задача:
+разобраться в коде, который написал ментор
+в классе TravelCalculatePremiumServiceImpl.
+Написать JUnit тесты для этого класса.
+
+PS: не забудьте по окончанию выполнения шага создать и заполнить
+файл /documentation/Step_X_description.txt. Формат заполнения этого
+файла описан в step_1 в файле Learning_reflection.txt.
