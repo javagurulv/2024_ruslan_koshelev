@@ -1,0 +1,12 @@
+Ваша задача: повесьте аннотацию @Component на класс JsonFileReader.
+Да, Spring IoC работает так же и для тестов!
+Воспользуйтесь аннотацией @Autowired в классе
+TravelCalculatePremiumControllerTest
+для получения зависимости JsonFileReader.
+
+Замените запросы в тестах на запросы из JSON файлов
+находящихся в директории src/test/resources.
+
+PS: не забудьте по окончанию выполнения шага создать и заполнить
+файл /documentation/Step_X_description.txt. Формат заполнения этого
+файла описан в step_1 в файле Learning_reflection.txt.
