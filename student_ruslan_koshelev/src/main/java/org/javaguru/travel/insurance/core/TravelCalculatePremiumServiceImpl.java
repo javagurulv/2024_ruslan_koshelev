@@ -4,6 +4,8 @@ import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
 import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
 
@@ -16,6 +18,9 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
         response.setAgreementDateTo(request.getAgreementDateTo());
         response.setPersonFirstName(request.getPersonFirstName());
         response.setPersonLastName(request.getPersonLastName());
+
+        final int coefficient = 24*60*60*1000;
+        response.setAgreementPrice(new BigDecimal((response.getAgreementDateTo().getTime()- response.getAgreementDateFrom().getTime())/coefficient));
 
         return response;
     }

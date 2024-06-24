@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,15 +16,17 @@ class TravelCalculatePremiumServiceImplTest {
     String firstName = "John";
     String lastName = "Doe";
     Date dataFrom = new Date(2024, Calendar.JUNE, 12);
-    Date dataTo = new Date(2025, Calendar.JUNE, 12);
+    Date dataTo = new Date(2024, Calendar.JUNE, 14);
 
     TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl();
     TravelCalculatePremiumResponse response;
     TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest(firstName, lastName, dataFrom, dataTo);
 
+
     @BeforeEach
     public void requestResponsePrepare() {
         response = service.calculatePremium(request);
+
     }
 
     @Test
@@ -50,6 +53,11 @@ class TravelCalculatePremiumServiceImplTest {
     @Test
     public void deleteMe() {
 
+    }
+
+    @Test
+    public void requestAgreementPriceTest(){
+        Assertions.assertEquals(new BigDecimal(2), response.getAgreementPrice());
     }
 
 }
