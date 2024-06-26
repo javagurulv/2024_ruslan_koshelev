@@ -13,17 +13,17 @@ class DateTimeServiceTest {
 
     Date dateFrom;
     Date dateTo;
+
     @BeforeEach
-    public void preparingForTest(){
+    public void preparingForTest() {
         dateFrom = new Date(2024, Calendar.DECEMBER, 6);
-        dateTo= new Date(2024, Calendar.DECEMBER, 16);
-
-
+        dateTo = new Date(2024, Calendar.DECEMBER, 16);
     }
+
     @Test
-    public void daysBetweenTwoDatesCalculateTest(){
-        DateTimeService dateTimeService = new DateTimeService(dateFrom,dateTo);
-        Assertions.assertEquals(new BigDecimal(10), dateTimeService.getAgreementPrice());
+    public void daysBetweenTwoDatesCalculateTest() {
+        DateTimeService dateTimeService = new DateTimeService();
+        Assertions.assertEquals(new BigDecimal(10), dateTimeService.calculateAgreementPrice(dateFrom, dateTo));
     }
 
 }
