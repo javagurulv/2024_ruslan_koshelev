@@ -16,9 +16,11 @@ class TravelCalculatePremiumServiceImplTest {
     String firstName = "John";
     String lastName = "Doe";
     Date dataFrom = new Date(2024, Calendar.JUNE, 12);
-    Date dataTo = new Date(2024, Calendar.JUNE, 14);
+    Date dataTo = new Date(2024, Calendar.JUNE, 16);
 
-    TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl();
+    DateTimeService dateTimeService= new DateTimeService();
+
+    TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl(dateTimeService);
     TravelCalculatePremiumResponse response;
     TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest(firstName, lastName, dataFrom, dataTo);
 
@@ -57,7 +59,7 @@ class TravelCalculatePremiumServiceImplTest {
 
     @Test
     public void requestAgreementPriceTest(){
-        Assertions.assertEquals(new BigDecimal(2), response.getAgreementPrice());
+        Assertions.assertEquals(new BigDecimal(4), response.getAgreementPrice());
     }
 
 }
