@@ -6,9 +6,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import org.mockito.Mockito;
+
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
+
+
 
 class TravelCalculatePremiumServiceImplTest {
 
@@ -18,15 +22,17 @@ class TravelCalculatePremiumServiceImplTest {
     Date dataFrom = new Date(2024, Calendar.JUNE, 12);
     Date dataTo = new Date(2024, Calendar.JUNE, 16);
 
-    DateTimeService dateTimeService= new DateTimeService();
 
-    TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl(dateTimeService);
+    private final DateTimeService mocDateTimeService = Mockito.mock(DateTimeService.class);
+
+    TravelCalculatePremiumServiceImpl service = new TravelCalculatePremiumServiceImpl(mocDateTimeService);
     TravelCalculatePremiumResponse response;
     TravelCalculatePremiumRequest request = new TravelCalculatePremiumRequest(firstName, lastName, dataFrom, dataTo);
 
-
     @BeforeEach
     public void requestResponsePrepare() {
+
+        Mockito.when(mocDateTimeService.calculateAgreementPrice(dataFrom, dataTo)).thenReturn(new BigDecimal(4));
         response = service.calculatePremium(request);
 
     }
