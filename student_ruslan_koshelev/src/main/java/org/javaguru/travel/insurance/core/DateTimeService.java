@@ -1,9 +1,12 @@
 package org.javaguru.travel.insurance.core;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class DateTimeService {
+@Component
+class DateTimeService {
 
     public BigDecimal calculateAgreementPrice(Date dateFrom, Date dateTo) {
         long millisBetweenDates = dateTo.getTime() - dateFrom.getTime();
